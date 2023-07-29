@@ -6,41 +6,101 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ThirdView: View {
+    
+    @State private var selectedOption = 0
+    @State private var selectedMoney = 0
+    @State var money = ["USD", "EUR", "JPY", "GBP", "MXN", "AUD", "BRL", "CHF", "TRY"]
+    @State var fieldKey = ""
+    @State var price = [String]()
+    @State var result = 0
+    @State var counter = 0
+    
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "dollarsign.square")
-                    .font(.system(size: 40))
-                    .foregroundColor(.white)
-                Spacer()
-                Text("Varlık Ekle")
+            
+            Picker("Moneys", selection: $selectedOption) {
+                ForEach(0..<money.count) { index in
+                    Text(money[index])
+                }
             }
-            .padding()
+            
+            .pickerStyle(.segmented)
+            
                 
             HStack {
-                Text("- - - - $")
+                TextField("Enter the price", text: $fieldKey)
+                
+                Text(money[selectedOption])
                     .font(.title)
             }
             .padding(.top, 24)
             
-            
-            
+        
             HStack {
-                Text("Varlıklar")
-                    .padding(.horizontal, 50)
-                Text("Kar/Zarar")
-                    .padding(.horizontal, 50)
+                Picker("Moneys", selection: $selectedMoney) {
+                    ForEach(0..<money.count) { index in
+                        Text(money[index])
+                    }
+                }
+                .pickerStyle(.menu)
             }
             .padding()
             .padding(.top, 20)
+   
+            Spacer()
             
             HStack {
-                Text("Dollar")
-                    .padding(.horizontal, 50)
-                Text("-20 dolar")
-                    .padding(.horizontal, 50)
+                Button("Tıkla"){
+                    for i in 0...money.count - 1 {
+                        convert(index: i)
+                        counter += 1
+                    }
+                    
+                    func convert(index: Int) {
+                        AF.request("https://api.exchangerate.host/convert?from=\(money[selectedOption])&to=\(money[index])").responseDecodable(of: model.self) { response in
+                            switch response.result {
+                            case .success(let model):
+                                // Veriyi başarıyla aldık, model içindeki verilere erişebilirsiniz.
+                                //print("Result: \(model.result)")
+                                price.append("\(model.result)")
+                            case .failure(let error):
+                                // Hata durumunda burası çalışır
+                                print("Error: \(error.localizedDescription)")
+                            }
+                            
+                            if price.count == 9 {
+                                result = 15
+                                result = Int(Float(fieldKey)! * (Float(price[selectedMoney]) ?? 10))
+                                price.removeAll()
+                            }
+                            
+                            else {
+                                print("Hata alındı")
+                            }
+                        }
+
+                    }
+                    
+                     
+                }
+            }
+            
+            Spacer()
+            
+            HStack {
+                Text("\(result)")
+                
+                Spacer()
+                
+                Text(money[selectedMoney])
+                    .font(.title)
+            }
+            
+            HStack {
+                 
             }
             
             Spacer()

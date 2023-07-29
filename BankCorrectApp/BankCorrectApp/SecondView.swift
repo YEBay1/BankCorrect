@@ -48,7 +48,9 @@ struct SecondView: View {
                     .stroke(.blue, lineWidth: 4)
             )
             
-            Button("Veri Çekme"){
+            Spacer()
+            
+            Button("Tıklayın"){
                 price.removeAll()
                 
                 for i in 0...money.count - 1 {
@@ -60,13 +62,14 @@ struct SecondView: View {
                         switch response.result {
                         case .success(let model):
                             // Veriyi başarıyla aldık, model içindeki verilere erişebilirsiniz.
-                            print("Result: \(model.result)")
+                            //print("Result: \(model.result)")
                             price.append("\(model.result)")
                         case .failure(let error):
                             // Hata durumunda burası çalışır
                             print("Error: \(error.localizedDescription)")
                         }
                     }
+
                 }
             }
             
@@ -312,7 +315,7 @@ struct SecondView: View {
             VStack {
                 
                 NavigationLink(destination: ThirdView()){
-                    Text("Pörtföy")
+                    Text("Converter")
                 }
                 .font(.largeTitle)
                 .padding()
