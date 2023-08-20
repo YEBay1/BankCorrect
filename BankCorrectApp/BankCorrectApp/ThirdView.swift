@@ -8,6 +8,8 @@
 import SwiftUI
 import Alamofire
 
+// Aşağıdaki kodlar daha temiz yazılabilir. Değerleri önceki sayfadan alsam yeterli 
+
 struct ThirdView: View {
     
     @State private var selectedOption = 0
@@ -17,6 +19,11 @@ struct ThirdView: View {
     @State var price = [String]()
     @State var result = 0
     @State var counter = 0
+    
+    @State private var animateGradient: Bool = false
+    
+    private let startColor: Color = .purple
+    private let endColor: Color = .green
     
     var body: some View {
         VStack {
@@ -32,6 +39,7 @@ struct ThirdView: View {
                 
             HStack {
                 TextField("Enter the price", text: $fieldKey)
+                    .foregroundColor(.green)
                 
                 Text(money[selectedOption])
                     .font(.title)
@@ -71,6 +79,7 @@ struct ThirdView: View {
                                 print("Error: \(error.localizedDescription)")
                             }
                             
+                            // Boş değer girince hata vericek düzeltilmeli 
                             if price.count == 9 {
                                 result = 15
                                 result = Int(Float(fieldKey)! * (Float(price[selectedMoney]) ?? 10))
@@ -105,7 +114,22 @@ struct ThirdView: View {
             
             Spacer()
         }
+        .foregroundColor(.black)
+        .padding(.horizontal)
+        .multilineTextAlignment(.center)
+        .background {
+            LinearGradient(colors: [startColor, endColor], startPoint: .topLeading, endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.all)
+                .hueRotation(.degrees(animateGradient ? 45 : 0))
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
+                        animateGradient.toggle()
+
+                    }
+                }
+        }
     }
+    
 }
 
 struct ThirdView_Previews: PreviewProvider {
