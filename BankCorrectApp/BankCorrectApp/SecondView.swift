@@ -17,8 +17,12 @@ struct SecondView: View {
     @State private var animateGradient: Bool = false
     
     @State private var selectedOption = 0
-    @State var money = ["USD", "EUR", "JPY", "GBP", "MXN", "AUD", "BRL", "CHF", "TRY"]
-    @State var money2 = ["dollar", "euro", "yen", "sterling", "peso", "indianrupee", "brazilianreal", "franc", "turkishlira"]
+    @State var money = ["USD", "EUR", "JPY", "GBP", "CHF", "TRY"]
+    // "BRL", "MXN", "AUD",
+    
+    @State var money2 = ["dollar", "euro", "yen", "sterling", "franc", "turkishlira"]
+    // "peso", "indianrupee", "brazilianreal",
+    
     @State var data1 = ""
     @State var moneyName = ""
     @State var selectedMoney = ""
@@ -55,283 +59,345 @@ struct SecondView: View {
     }
     
     var body: some View {
-            VStack {
-                Picker("Moneys", selection: $selectedOption) {
-                    ForEach(0..<money.count) { index in
-                        Text(money[index])
-                        //converter()
-                    }
+        VStack {
+            Picker("Moneys", selection: $selectedOption) {
+                ForEach(0..<money.count) { index in
+                    Text(money[index])
+                    //converter()
                 }
-                .pickerStyle(.segmented)
+            }
+            .pickerStyle(.segmented)
+            
+            // ---------- Dolar Kısmı -----------
+            
+            HStack {
+                VStack {
+                    Image(systemName: "\(money2[selectedOption])sign.circle")
+                        .font(.system(size: 40))
+                        .foregroundColor(.white)
+                }
                 
-                // ---------- Dolar Kısmı -----------
-                HStack {
-                    VStack {
-                        Image(systemName: "\(money2[selectedOption])sign.circle")
-                            .font(.system(size: 40))
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack {
-                        Text("\(money[selectedOption])")
-                            .padding()
-                            .font(.system(size: 30))
-                    }
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Button("Tıklayın"){
-                            converter()
-                        }
-                    }
-                    
-                    Spacer()
-
+                VStack {
+                    Text("\(money[selectedOption])")
+                        .padding()
+                        .font(.system(size: 30))
                 }
-                //.frame(width: 150 ,height: 50)
-                .padding()
-
+                
                 Spacer()
                 
+                VStack {
+                    Button("Tıklayın"){
+                        converter()
+                    }
+                }
                 
+                Spacer()
                 
-                // ----------------------------------
+            }
+            //.frame(width: 150 ,height: 50)
+            .padding()
+            
+            Spacer()
+            
+            
+            
+            // ----------------------------------
+            
+            // ---------- Para Birimleri 1.Kısım -----------
+            
+            
+            HStack(spacing: 20) {
                 
-                // ---------- Para Birimleri 1.Kısım -----------
-                
-                HStack(spacing: 20) {
-                    VStack {
-                        HStack {
+                VStack {
+                    HStack {
+                        VStack(spacing: 5) {
                             Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "dollarsign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/USD")
+                                .font(.system(size: 45))
+                            
+                            
+                            Text("\(money[selectedOption])")
+                                .font(.system(size: 24))
+                            
                         }
                         
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[0])")
+                        .padding(15)
+                        
+                        VStack(spacing: 5) {
+                            
+                            Image(systemName: "dollarsign.circle")
+                                .font(.system(size: 45))
+                            Text("\(money[0])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        Spacer()
+                        
+                        VStack(spacing: 5) {
+                            
+                            if price.count == 6 {
+                                HStack {
+                                    Text("\(price[0])")
+                                        .font(.system(size: 30))
+                                }
                             }
+                            
                         }
+                        Spacer()
+                        
                     }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "eurosign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selected1])/EUR")
-                        }
-                    
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[1])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "yensign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/JPY")
-                        }
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[2])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
                 }
-                
-                // ------------------------- Para Birimleri 2.kısım
-                
+                .frame(width: 340, height: 60)
                 .padding()
-                //Spacer()
-                
-                
-                HStack(spacing: 20) {
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "sterlingsign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/GBP")
-                        }
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[3])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "pesosign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/MXN")
-                        }
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[4])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "indianrupeesign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/AUD")
-                        }
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[5])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                }
-                
-                .padding()
-                //Spacer()
-                
-                
-                
-                // ------------------------- Para Birimleri 3.kısım
-                
-                HStack(spacing: 20) {
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "brazilianrealsign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/INR")
-                        }
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[6])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "francsign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/CHF")
-                        }
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[7])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                    VStack {
-                        HStack {
-                            Image(systemName: "\(money2[selectedOption])sign.circle")
-                                .font(.system(size: 25))
-                            Image(systemName: "turkishlirasign.circle")
-                                .font(.system(size: 25))
-                        }
-                        HStack {
-                            Text("\(money[selectedOption])/TRY")
-                        }
-                        if price.count == 9 {
-                            HStack {
-                                Text("\(price[8])")
-                            }
-                        }
-                    }
-                    .frame(width: 80, height: 70)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.green, lineWidth: 4)
-                    )
-                    
-                }
-                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.green, lineWidth: 4)
+                )
             }
+            
+            
+            HStack(spacing: 20) {
+                
+                VStack {
+                    HStack {
+                        VStack(spacing: 5) {
+                            Image(systemName: "\(money2[selectedOption])sign.circle")
+                                .font(.system(size: 45))
+                            
+                            
+                            Text("\(money[selectedOption])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        
+                        .padding(15)
+                        
+                        VStack(spacing: 5) {
+                            
+                            Image(systemName: "eurosign.circle")
+                                .font(.system(size: 45))
+                            Text("\(money[0])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        Spacer()
+                        
+                        VStack(spacing: 5) {
+                            
+                            if price.count == 6 {
+                                HStack {
+                                    Text("\(price[1])")
+                                        .font(.system(size: 30))
+                                }
+                            }
+                            
+                        }
+                        Spacer()
+                        
+                    }
+                }
+                .frame(width: 340, height: 60)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.green, lineWidth: 4)
+                )
+            }
+            
+            
+            HStack(spacing: 20) {
+                
+                VStack {
+                    HStack {
+                        VStack(spacing: 5) {
+                            Image(systemName: "\(money2[selectedOption])sign.circle")
+                                .font(.system(size: 45))
+                            
+                            
+                            Text("\(money[selectedOption])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        
+                        .padding(15)
+                        
+                        VStack(spacing: 5) {
+                            
+                            Image(systemName: "yensign.circle")
+                                .font(.system(size: 45))
+                            Text("\(money[0])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        Spacer()
+                        
+                        VStack(spacing: 5) {
+                            
+                            if price.count == 6 {
+                                HStack {
+                                    Text("\(price[2])")
+                                        .font(.system(size: 30))
+                                }
+                            }
+                            
+                        }
+                        Spacer()
+                        
+                    }
+                }
+                .frame(width: 340, height: 60)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.green, lineWidth: 4)
+                )
+            }
+            
+            
+            HStack(spacing: 20) {
+                
+                VStack {
+                    HStack {
+                        VStack(spacing: 5) {
+                            Image(systemName: "\(money2[selectedOption])sign.circle")
+                                .font(.system(size: 45))
+                            
+                            
+                            Text("\(money[selectedOption])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        
+                        .padding(15)
+                        
+                        VStack(spacing: 5) {
+                            
+                            Image(systemName: "sterlingsign.circle")
+                                .font(.system(size: 45))
+                            Text("\(money[0])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        Spacer()
+                        
+                        VStack(spacing: 5) {
+                            
+                            if price.count == 6 {
+                                HStack {
+                                    Text("\(price[3])")
+                                        .font(.system(size: 30))
+                                }
+                            }
+                            
+                        }
+                        Spacer()
+                        
+                    }
+                }
+                .frame(width: 340, height: 60)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.green, lineWidth: 4)
+                )
+            }
+            
+            
+            HStack(spacing: 20) {
+                
+                VStack {
+                    HStack {
+                        VStack(spacing: 5) {
+                            Image(systemName: "\(money2[selectedOption])sign.circle")
+                                .font(.system(size: 45))
+                            
+                            
+                            Text("\(money[selectedOption])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        
+                        .padding(15)
+                        
+                        VStack(spacing: 5) {
+                            
+                            Image(systemName: "francsign.circle")
+                                .font(.system(size: 45))
+                            Text("\(money[0])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        Spacer()
+                        
+                        VStack(spacing: 5) {
+                            
+                            if price.count == 6 {
+                                HStack {
+                                    Text("\(price[4])")
+                                        .font(.system(size: 30))
+                                }
+                            }
+                            
+                        }
+                        Spacer()
+                        
+                    }
+                }
+                .frame(width: 340, height: 60)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.green, lineWidth: 4)
+                )
+            }
+            
+            HStack(spacing: 20) {
+                
+                VStack {
+                    HStack {
+                        VStack(spacing: 5) {
+                            Image(systemName: "\(money2[selectedOption])sign.circle")
+                                .font(.system(size: 45))
+                            
+                            
+                            Text("\(money[selectedOption])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        
+                        .padding(15)
+                        
+                        VStack(spacing: 5) {
+                            
+                            Image(systemName: "turkishlirasign.circle")
+                                .font(.system(size: 45))
+                            Text("\(money[0])")
+                                .font(.system(size: 24))
+                            
+                        }
+                        Spacer()
+                        
+                        VStack(spacing: 5) {
+                            
+                            if price.count == 6 {
+                                HStack {
+                                    Text("\(price[5])")
+                                        .font(.system(size: 30))
+                                }
+                            }
+                            
+                        }
+                        Spacer()
+                        
+                    }
+                }
+                .frame(width: 340, height: 60)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.green, lineWidth: 4)
+                )
+            }
+        }
             .foregroundColor(.black)
             .padding(.horizontal)
             .multilineTextAlignment(.center)
