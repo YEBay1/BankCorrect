@@ -126,7 +126,7 @@ struct ThirdView: View {
         .padding(.horizontal)
         .multilineTextAlignment(.center)
         .background {
-            LinearGradient(colors: [startColor, endColor], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
                 .hueRotation(.degrees(animateGradient ? 45 : 0))
                 .onAppear {

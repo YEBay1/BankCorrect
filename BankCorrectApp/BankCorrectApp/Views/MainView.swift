@@ -15,12 +15,14 @@ struct MainView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            
+                
          ThirdView()
                 .tabItem {
                     Label("Converter", systemImage: "speedometer")
                 }
         }
+        .accentColor(.green)
+        
     }
 }
 

@@ -119,7 +119,7 @@ struct SecondView: View {
         .padding(.horizontal)
         .multilineTextAlignment(.center)
         .background {
-            LinearGradient(colors: [startColor, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [.blue, .white ], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
                 .hueRotation(.degrees(animateGradient ? 45 : 0))
                 .onAppear {
