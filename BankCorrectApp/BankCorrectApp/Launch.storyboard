@@ -22,41 +22,31 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe1.png" translatesAutoresizingMaskIntoConstraints="NO" id="LbP-BZ-uNq">
-                                <rect key="frame" x="0.0" y="382" width="393" height="319"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon3.png" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-eb-vWt">
-                                <rect key="frame" x="0.0" y="75" width="393" height="287"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="287" id="32g-41-0Hw"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="correcticon.png" translatesAutoresizingMaskIntoConstraints="NO" id="YQh-fl-izS">
+                                <rect key="frame" x="0.0" y="142" width="393" height="467"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" red="0.15892570350629801" green="0.12841504449511737" blue="0.38403566919191923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemPurpleColor"/>
                         <constraints>
-                            <constraint firstItem="LbP-BZ-uNq" firstAttribute="top" secondItem="WXK-eb-vWt" secondAttribute="bottom" constant="20" id="1Fz-lh-0H9"/>
-                            <constraint firstItem="WXK-eb-vWt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9w8-Zc-wQg"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="LbP-BZ-uNq" secondAttribute="bottom" constant="117" id="Nbz-Ry-Ner"/>
-                            <constraint firstAttribute="trailing" secondItem="WXK-eb-vWt" secondAttribute="trailing" id="Wnf-Gt-FMK"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="-14" id="aQI-Qj-oie"/>
-                            <constraint firstItem="WXK-eb-vWt" firstAttribute="leading" secondItem="LbP-BZ-uNq" secondAttribute="leading" id="b69-QW-JkK"/>
-                            <constraint firstItem="WXK-eb-vWt" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="16" id="dWg-N5-teG"/>
-                            <constraint firstItem="WXK-eb-vWt" firstAttribute="trailing" secondItem="LbP-BZ-uNq" secondAttribute="trailing" id="hFC-0d-qcN"/>
-                            <constraint firstItem="LbP-BZ-uNq" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" id="kgt-OX-Ebh"/>
-                            <constraint firstItem="LbP-BZ-uNq" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="os2-9i-5jk"/>
+                            <constraint firstItem="YQh-fl-izS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0S1-Ob-ENS"/>
+                            <constraint firstItem="YQh-fl-izS" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="5Dk-Gg-djH"/>
+                            <constraint firstItem="YQh-fl-izS" firstAttribute="leading" secondItem="obG-Y5-kRd" secondAttribute="leading" id="8AK-SB-aEL"/>
+                            <constraint firstItem="YQh-fl-izS" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="Iuq-o1-DjI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="-14" id="dJj-ma-wlk"/>
+                            <constraint firstItem="YQh-fl-izS" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="83" id="gsm-ZD-num"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="YQh-fl-izS" secondAttribute="bottom" constant="209" id="v8O-Jf-0gL"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+            <point key="canvasLocation" x="-463.35877862595419" y="279.57746478873241"/>
         </scene>
     </scenes>
     <resources>
-        <image name="cafe1.png" width="375" height="375"/>
-        <image name="icon3.png" width="375" height="375"/>
+        <image name="correcticon.png" width="768" height="768"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

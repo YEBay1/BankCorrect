@@ -11,7 +11,7 @@ struct MainView: View {
     var body: some View {
         
         TabView {
-         SecondView()
+            SecondView(price: [""])
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
@@ -21,7 +21,6 @@ struct MainView: View {
                     Label("Converter", systemImage: "speedometer")
                 }
         }
-        
     }
 }
 

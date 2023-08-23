@@ -8,7 +8,6 @@
 import SwiftUI
 import Alamofire
 
-// Aşağıdaki kodlar daha temiz yazılabilir. Değerleri önceki sayfadan alsam yeterli 
 
 struct ThirdView: View {
     
@@ -22,8 +21,8 @@ struct ThirdView: View {
     
     @State private var animateGradient: Bool = false
     
-    private let startColor: Color = .purple
-    private let endColor: Color = .green
+    private let startColor: Color = .blue
+    private let endColor: Color = .purple
     
     var body: some View {
         VStack {
@@ -35,16 +34,25 @@ struct ThirdView: View {
             }
             
             .pickerStyle(.segmented)
-            
                 
             HStack {
-                TextField("Enter the price", text: $fieldKey)
-                    .foregroundColor(.green)
+                HStack(spacing: 120) {
+                    TextField("Enter the price", text: $fieldKey)
+                }
+                //.onChange(of: @fieldKey){
+                    //converter()
+                //}
+                //.textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Text(money[selectedOption])
-                    .font(.title)
+                Spacer()
+                .padding(.top, 80)
+            
+                
+                HStack {
+                    Text(money[selectedOption])
+                        .font(.title)
+                }
             }
-            .padding(.top, 24)
             
         
             HStack {
@@ -53,7 +61,7 @@ struct ThirdView: View {
                         Text(money[index])
                     }
                 }
-                .pickerStyle(.menu)
+                .pickerStyle(.wheel)
             }
             .padding()
             .padding(.top, 20)
@@ -61,7 +69,7 @@ struct ThirdView: View {
             Spacer()
             
             HStack {
-                Button("Tıkla"){
+                Button("Convert"){
                     for i in 0...money.count - 1 {
                         convert(index: i)
                         counter += 1

@@ -50,9 +50,9 @@ struct FirstView: View {
                     .padding()
                 
                 HStack{
-                    NavigationLink(destination: SecondView()){
-                        Text("Giriş")
-                    }
+                   // NavigationLink(destination: SecondView()){
+                    //    Text("Giriş")
+                   // }
                 }
             }
         }
