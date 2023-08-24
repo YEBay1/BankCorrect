@@ -16,8 +16,6 @@
 		C6299C3D2A72E9F200196C66 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6299C3C2A72E9F200196C66 /* ThirdView.swift */; };
 		C6299C402A72EA9B00196C66 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C6299C3F2A72EA9B00196C66 /* Alamofire */; };
 		C66F60D82A92334700FE77EE /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66F60D72A92334700FE77EE /* Launch.storyboard */; };
-		C66F60E22A92376600FE77EE /* cafe1.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F60E12A92376600FE77EE /* cafe1.png */; };
-		C66F60E42A92388B00FE77EE /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F60E32A92388B00FE77EE /* icon3.png */; };
 		C66F60EA2A923DCD00FE77EE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F60E92A923DCD00FE77EE /* MainView.swift */; };
 		C68FF1A62A8FF7FE00568212 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C68FF1A52A8FF7FE00568212 /* GoogleService-Info.plist */; };
 		C68FF1A92A8FF88200568212 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C68FF1A82A8FF88200568212 /* FirebaseAuth */; };
@@ -32,8 +30,8 @@
 		C68FF1BB2A8FF88200568212 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C68FF1BA2A8FF88200568212 /* FirebaseStorageCombine-Community */; };
 		C69DE8D22A9418A800AB72BD /* Cell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DE8D12A9418A800AB72BD /* Cell2.swift */; };
 		C69DE8D42A9418AE00AB72BD /* Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DE8D32A9418AE00AB72BD /* Cell1.swift */; };
+		C6B901D92A97E5BB00B4FAE9 /* MoneyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B901D82A97E5BB00B4FAE9 /* MoneyDetailView.swift */; };
 		C6C063432A95469A005696E8 /* mainPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C063422A95469A005696E8 /* mainPicker.swift */; };
-		C6C063492A955F70005696E8 /* correcticon.png in Resources */ = {isa = PBXBuildFile; fileRef = C6C063482A955F70005696E8 /* correcticon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,14 +44,12 @@
 		C6299C3A2A72E9E800196C66 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		C6299C3C2A72E9F200196C66 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		C66F60D72A92334700FE77EE /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
-		C66F60E12A92376600FE77EE /* cafe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cafe1.png; path = ../../cafe1.png; sourceTree = "<group>"; };
-		C66F60E32A92388B00FE77EE /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon3.png; path = ../../icon3.png; sourceTree = "<group>"; };
 		C66F60E92A923DCD00FE77EE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C68FF1A52A8FF7FE00568212 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C69DE8D12A9418A800AB72BD /* Cell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell2.swift; sourceTree = "<group>"; };
 		C69DE8D32A9418AE00AB72BD /* Cell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell1.swift; sourceTree = "<group>"; };
+		C6B901D82A97E5BB00B4FAE9 /* MoneyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDetailView.swift; sourceTree = "<group>"; };
 		C6C063422A95469A005696E8 /* mainPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPicker.swift; sourceTree = "<group>"; };
-		C6C063482A955F70005696E8 /* correcticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = correcticon.png; path = ../../correcticon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,15 +94,13 @@
 			isa = PBXGroup;
 			children = (
 				C66F60D72A92334700FE77EE /* Launch.storyboard */,
+				C6B901D72A97E58E00B4FAE9 /* DetailView */,
 				C6C063472A955EF8005696E8 /* Views */,
 				C6C0633F2A954663005696E8 /* MainPicker */,
 				C69DE8C72A94184900AB72BD /* Cells */,
 				C6299C2A2A72E94F00196C66 /* BankCorrectAppApp.swift */,
 				C6299C2C2A72E94F00196C66 /* ContentView.swift */,
 				C68FF1A52A8FF7FE00568212 /* GoogleService-Info.plist */,
-				C6C063482A955F70005696E8 /* correcticon.png */,
-				C66F60E12A92376600FE77EE /* cafe1.png */,
-				C66F60E32A92388B00FE77EE /* icon3.png */,
 				C6299C2E2A72E95000196C66 /* Assets.xcassets */,
 				C6299C302A72E95000196C66 /* Preview Content */,
 			);
@@ -128,6 +122,14 @@
 				C69DE8D32A9418AE00AB72BD /* Cell1.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		C6B901D72A97E58E00B4FAE9 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				C6B901D82A97E5BB00B4FAE9 /* MoneyDetailView.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		C6C0633F2A954663005696E8 /* MainPicker */ = {
@@ -227,10 +229,7 @@
 				C6299C322A72E95000196C66 /* Preview Assets.xcassets in Resources */,
 				C6299C2F2A72E95000196C66 /* Assets.xcassets in Resources */,
 				C68FF1A62A8FF7FE00568212 /* GoogleService-Info.plist in Resources */,
-				C66F60E22A92376600FE77EE /* cafe1.png in Resources */,
-				C6C063492A955F70005696E8 /* correcticon.png in Resources */,
 				C66F60D82A92334700FE77EE /* Launch.storyboard in Resources */,
-				C66F60E42A92388B00FE77EE /* icon3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B901D92A97E5BB00B4FAE9 /* MoneyDetailView.swift in Sources */,
 				C69DE8D42A9418AE00AB72BD /* Cell1.swift in Sources */,
 				C69DE8D22A9418A800AB72BD /* Cell2.swift in Sources */,
 				C6299C2D2A72E94F00196C66 /* ContentView.swift in Sources */,

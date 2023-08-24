@@ -24,6 +24,7 @@ struct Cell2: View {
     @State var selectedMoney1 = ""
     @State var count = 0
     @State var correct = true
+    @State private var isSecondScreenActive = false
     
     private let startColor: Color = .blue
     private let endColor: Color = .cyan
@@ -171,6 +172,7 @@ struct Cell2: View {
                         
                     }
                 }
+                
                 .frame(width: 340, height: 60)
                 .padding()
                 .background {
@@ -293,6 +295,7 @@ struct Cell2: View {
                         
                     }
                 }
+                
                 .frame(width: 340, height: 60)
                 .padding()
                 .background {
@@ -415,6 +418,8 @@ struct Cell2: View {
                         
                     }
                 }
+                
+                
                 .frame(width: 340, height: 60)
                 .padding()
                 .background {
@@ -425,8 +430,10 @@ struct Cell2: View {
                     )
                 }
                 
+                
             }
             .cornerRadius(25)
+            
         }
     }
 }

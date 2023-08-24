@@ -14,7 +14,6 @@ struct mainPicker: View {
     @Binding var selectedOption : Int
     @State var money = ["USD", "EUR", "JPY", "GBP", "CHF", "TRY"]
     @State var money2 = ["dollar", "euro", "yen", "sterling", "franc", "turkishlira"]
-    @State var design = ["3Cell", "6Cell", "9Cell"]
     @State private var selectedDesign = 0
     @State var selectedMoney = ""
     @Binding var price : [String]
